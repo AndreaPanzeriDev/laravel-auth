@@ -67,7 +67,8 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        //
+        $file = Post::findOrFail($id);
+        return view('admin.post.ipoteticoedit', compact('file'));
     }
 
     /**
@@ -79,7 +80,11 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $infoP = $request->all();
+        $post = Post::findOrFail($id);
+        $post->update($infoP);
+
+        return redirect()->route('admin.index');
     }
 
     /**
@@ -90,6 +95,9 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $postToDelete = Post::findOrFail($id);
+        $postToDelete -> delete();
+
+        return redirect()->route('admin.index');
     }
 }

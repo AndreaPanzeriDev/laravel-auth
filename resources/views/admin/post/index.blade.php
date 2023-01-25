@@ -14,8 +14,8 @@
                     <div class="text-center my-2">{{ $item->title }}</div>
                     <div class="buttons">
                         <!-- web.php/PostController/ipoteticoshow.blade.php-->
-                        <button class="editB"><a href="">Edit</a></button>
-                        <button class="deleteB"><a href="">Delete</a></button>
+                        <button class="editB"><a href="{{route('admin.posts.edit', $item->id)}}">Edit</a></button>
+                        <button class="deleteB"><a href="{{route('admin.posts.destroy', $item->id)}}">Delete</a></button>
                     </div>
                 </div>
             @endforeach
