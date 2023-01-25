@@ -26,6 +26,7 @@ class PostController extends Controller
     public function create()
     {
         //
+        return view('admin.post.ipoteticocreate');
     }
 
     /**
@@ -37,6 +38,13 @@ class PostController extends Controller
     public function store(Request $request)
     {
         //
+        $data = $request->all();
+        $new_record = new Post();
+        $new_record -> fill($data);
+        $new_record->save();
+
+        $info_posts = Post::all();
+        return view('admin.post.index', compact('info_posts'));
     }
 
     /**

@@ -2,16 +2,20 @@
 
 @section('content')
     <div class="containerM">
-        <h1>stampiamo lista</h1>
-
+        <div class="function">
+            <h1>Post</h1>
+            <div>
+                <button class="buttonN"><a href="{{route('admin.posts.create')}}">+ Add new</a></button>
+            </div>
+        </div>
         <div class="cards">
             @foreach ($info_posts as $item)
                 <div class="cardM">
-                    <div>{{ $item->title }}</div>
-                    <div>
-                        <button><a href="{{ route('admin.posts.show', $item->id) }}"></a>Show</button> <!-- web.php/PostController/ipoteticoshow.blade.php-->
-                        <button></button>
-                        <button></button>
+                    <div class="text-center my-2">{{ $item->title }}</div>
+                    <div class="buttons">
+                        <!-- web.php/PostController/ipoteticoshow.blade.php-->
+                        <button class="editB"><a href="">Edit</a></button>
+                        <button class="deleteB"><a href="">Delete</a></button>
                     </div>
                 </div>
             @endforeach
