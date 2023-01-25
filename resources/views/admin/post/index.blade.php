@@ -15,7 +15,13 @@
                     <div class="buttons">
                         <!-- web.php/PostController/ipoteticoshow.blade.php-->
                         <button class="editB"><a href="{{route('admin.posts.edit', $item->id)}}">Edit</a></button>
-                        <button class="deleteB"><a href="{{route('admin.posts.destroy', $item->id)}}">Delete</a></button>
+                        <form action="{{route('admin.posts.destroy', $item->id)}}">
+
+                            @csrf
+                            @method('DELETE')
+                            <button class="deleteB" type="submit"><a href="">Delete</a></button>
+                        </form>
+
                     </div>
                 </div>
             @endforeach
