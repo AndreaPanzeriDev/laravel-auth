@@ -21,7 +21,7 @@ Auth::routes();
 Route::middleware('auth')
     ->namespace('Admin')
     ->prefix('admin') //localhost:8080/admin/posts
-    ->name('admin.')
+    ->name('admin.') //da il nome al prefisso
     ->group(function () {
         Route::get('/', 'HomeController@index')->name('index');
         //controllers per crud
