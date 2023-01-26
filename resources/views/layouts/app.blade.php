@@ -33,7 +33,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                        <a href="{{route('admin.posts.index')}}">Link</a>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -72,6 +72,7 @@
             </div>
         </nav>
 
+        <!-- main -->
         <main class="py-4">
             @yield('content')
         </main>
